@@ -1,12 +1,7 @@
-def check_sign(number):
-    if number > 0:
-        return "Positive"
-    elif number < 0:
-        return "Negative"
-    else:
-        return "Zero"
-
-# User input
 number = float(input("Enter a number: "))
-sign = check_sign(number)
-print(f"{number} is {sign}.")
+if number > 0:
+    print(f"{number} is Positive.")
+elif number < 0:
+    print(f"{number} is Negative.")
+else:
+    print(f"{number} is Zero.")

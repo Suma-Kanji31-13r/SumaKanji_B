@@ -1,19 +1,11 @@
-def is_prime(num):
-    if num <= 1:
-        return False
-    for i in range(2, int(num**0.5) + 1):
-        if num % i == 0:
-            return False
-    return True
-
-def generate_prime_series(n):
-    primes = []
-    for i in range(2, n + 1):
-        if is_prime(i):
-            primes.append(i)
-    return primes
-
-# User input
 n = int(input("Enter the value of n: "))
-prime_series = generate_prime_series(n)
-print(f"Prime numbers up to {n} are: {prime_series}")
+primes = []
+for i in range(2, n + 1):
+    is_prime = True
+    for j in range(2, int(i**0.5) + 1):
+        if i % j == 0:
+            is_prime = False
+            break
+    if is_prime:
+        primes.append(i)
+print(f"Prime numbers up to {n} are: {primes}")
